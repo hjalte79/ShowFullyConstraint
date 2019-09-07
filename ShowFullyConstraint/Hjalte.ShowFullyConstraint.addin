@@ -1,0 +1,14 @@
+﻿<Addin Type="Standard">
+  <ClassId>{d53b3492-2496-4816-b14d-903992a52a5e}</ClassId>
+  <ClientId>{d53b3492-2496-4816-b14d-903992a52a5e}</ClientId>
+  <DisplayName>Hjalte.ShowFullyConstraint</DisplayName>
+  <Description>This addon marks all full constraint occurences in a assembly with a 'green check'.</Description>
+  <Assembly>Hjalte.ShowFullyConstraint.dll</Assembly>
+  <LoadOnStartUp>1</LoadOnStartUp>
+  <UserUnloadable>0</UserUnloadable>
+  <Hidden>0</Hidden>
+  <SupportedSoftwareVersionGreaterThan>15..</SupportedSoftwareVersionGreaterThan>
+  <DataVersion>1</DataVersion>
+  <UserInterfaceVersion>1</UserInterfaceVersion>
+  <LoadBehavior>0</LoadBehavior>
+</Addin>
