@@ -30,6 +30,7 @@ namespace Hjalte.ShowFullyConstraint
     {
         //https://forums.autodesk.com/t5/inventor-ideas/change-icon-of-fully-constraint-parts-in-assembly/idi-p/4600123
 
+            private const string BROWSERMODELPANE = "AmBrowserArrangement";
         private Inventor.Application inventor;
 
         public void Activate(Inventor.ApplicationAddInSite addInSiteObject, bool firstTime)
@@ -90,7 +91,7 @@ namespace Hjalte.ShowFullyConstraint
                 return;
             }
             AssemblyDocument aDoc = (AssemblyDocument)doc;
-            unMark(aDoc.BrowserPanes["Model"].TopNode.BrowserNodes);
+            unMark(aDoc.BrowserPanes[BROWSERMODELPANE].TopNode.BrowserNodes);
         }
         private void unMark(BrowserNodesEnumerator browserNodes)
         {
@@ -128,7 +129,7 @@ namespace Hjalte.ShowFullyConstraint
             }
             AssemblyDocument aDoc = (AssemblyDocument)doc;
 
-            mark(aDoc.BrowserPanes["Model"].TopNode.BrowserNodes);
+            mark(aDoc.BrowserPanes[BROWSERMODELPANE].TopNode.BrowserNodes);
 
         }
         private void mark(BrowserNodesEnumerator browserNodes)
