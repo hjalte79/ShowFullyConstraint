@@ -49,8 +49,13 @@ namespace Hjalte.ShowFullyConstraint
         {
             if (BeforeOrAfter == EventTimingEnum.kAfter)
             {
-                startMarking(DocumentObject);
+                try
+                {
+                    startMarking(DocumentObject);
+                }
+                catch (Exception) { }
             }
+            ReasonsForChange = CommandTypesEnum.kNonShapeEditCmdType;
             HandlingCode = HandlingCodeEnum.kEventNotHandled;
         }
         private void onOpen(_Document DocumentObject, string FullDocumentName, EventTimingEnum BeforeOrAfter, NameValueMap Context, out HandlingCodeEnum HandlingCode)
@@ -65,7 +70,11 @@ namespace Hjalte.ShowFullyConstraint
         {
             if (BeforeOrAfter == EventTimingEnum.kBefore)
             {
-                startUnMarking(DocumentObject);
+                try
+                {
+                    startUnMarking(DocumentObject);
+                }
+                catch (Exception) { }
             }
             HandlingCode = HandlingCodeEnum.kEventNotHandled;
         }
@@ -73,8 +82,12 @@ namespace Hjalte.ShowFullyConstraint
         {
             if (BeforeOrAfter == EventTimingEnum.kBefore)
             {
-                isSaving = true;
-                startUnMarking(DocumentObject);
+                try
+                {
+                    isSaving = true;
+                    startUnMarking(DocumentObject);
+                }
+                catch (Exception) { }
             }
             else
             {
